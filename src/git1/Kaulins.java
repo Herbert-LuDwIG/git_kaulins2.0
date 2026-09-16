@@ -5,28 +5,26 @@ import java.util.Scanner;
 
 public class Kaulins {
 
-	static int mestKaulinu (int reizes) {
-		int skaitlis;
+	static void mestKaulinu (int reizes) {
+		int skaitlis, lielakais = 0;
 		Random rand = new Random ();
-		int min = 6;
-		
 		for (int i=1; i<=reizes; i++) {
 			skaitlis = rand.nextInt(6)+1;
 			System.out.println("Uzkrita skaitlis: " + skaitlis);
-			if(skaitlis < min)
-				min = skaitlis;
+			if(lielakais < skaitlis) {
+				lielakais = skaitlis;
+			}
 		}
-		return min;
-		
+		System.out.println("Lielākais skaitlis metienu piegājienā ir" + lielakais);
 	}
 
 	public static void main(String[] args) {
 		int reizes;
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Cik reizes mest kauliņu?");
-		reizes = scan.nextInt();
-		System.out.println("Mzākais skaitlis no visiem metieniem: " + mestKaulinu(reizes));
-		
+		do {
+			System.out.println("Cik reizes mest kauliņu?");
+			reizes = scan.nextInt();
+		}while(reizes<1);		
 		scan.close();
 	}
 
