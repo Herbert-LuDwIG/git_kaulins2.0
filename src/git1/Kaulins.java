@@ -27,24 +27,28 @@ public class Kaulins {
 		int izv;
 		Scanner scan = new Scanner(System.in);
 		System.out.println();
-		System.out.print("1 - Mest kauliņu\n2 - Apturēt");
-		izv = scan.nextInt();
 		
+		izv = scan.nextInt();
+		do {
+		System.out.print("1 - Mest kauliņu\n2 - Apturēt\n 3 - saskaitīt 3+3");	
 		switch(izv) {
 		
 		case 1:
-			do {
+			
 			System.out.println("Cik reizes mest kauliņu?");
 			reizes = scan.nextInt();
 			mestKaulinu(reizes);
-		}while(reizes>1 || izv!=2);
+	
 				
 			break;
 		case 2: 
 			System.out.println("Programma ir apturēta!");
 			break;
+		case 4: 
+			System.out.println("3+3 = " + (3+3));
+			break;
 		}
-		
+		}while(izv!=2);
 		
 				
 		scan.close();
